@@ -25,9 +25,8 @@ a {
 .header {
     background-color: #FFFFFF;
     padding: 24px 0;
-border-bottom: 1px solid var(--cornflower);
+border-bottom: 1px solid #e7e9fc;
         height: 72px;
-        /* color: #E7E9FC; */
 }
 
 
@@ -86,17 +85,20 @@ border-bottom: 1px solid var(--cornflower);
     color:#404bbf;
 }
 .header-menu-list {
+    padding: 24px 0;
     display: flex;
     gap: 40px;
 }
 
 .header-navigation {
     display: flex;
+    align-items: center;
 }
 
 .header-contacts-list {
     display: flex;
     gap: 40px;
+    align-items: center;
 }
 .header .container {
     display: flex;
@@ -110,8 +112,7 @@ border-bottom: 1px solid var(--cornflower);
 
 .hero {
 background-color: #2E2F42;
-padding-top: 188px;
-padding-bottom: 292px;
+padding: 188px 0;
 
 }
 .hero-title {
@@ -143,6 +144,9 @@ padding-bottom: 292px;
     min-width: 169px;
     display: block;
 margin: 0 auto;
+height: 56px;
+border: none;
+border-radius: 4px;
 }
 
 .hero .hero-button:hover,
@@ -153,6 +157,7 @@ margin: 0 auto;
 /*------------------- Features -----------------*/
 .features {
     background-color: #FFFFFF;
+    padding: 120px 0;
 }
 
 .visually-hidden {
@@ -170,6 +175,7 @@ margin: 0 auto;
 .features-subtitle {
     font-weight: 500;
     font-size: 20px;
+    margin-bottom: 8px;
 
     /* line-height: 24px; */
     line-height: 1.2;
@@ -192,105 +198,95 @@ margin: 0 auto;
     gap: 24px;
     padding-top: 123px;
     padding-bottom: 120px;
-    
-}
-
-.features-item {
-width: calc((100% - 72) / 4);
-}
+    flex-basis: calc((100% - 72px) / 4);
+    }
 /* ---------------------------Team ------------------*/
 .team {
     background-color: #F4F4FD;
+    padding: 120px 0;
+    /* как требуют тесты */
 }
 
 .team-title {
+    margin: 0 0 72px;
+    /* отступ заголовка от списка */
     font-weight: 700;
     font-size: 36px;
-
-    line-height: 40px;
     line-height: 1.11;
     letter-spacing: 0.02em;
     text-align: center;
+    /* обязательно: text-align:center */
     color: #2E2F42;
     text-transform: capitalize;
-    padding-top: 120px;
-    padding-bottom: 72px;
 }
 
 .team-list {
     display: flex;
     justify-content: center;
-    align-items: stretch;
     flex-wrap: wrap;
     gap: 24px;
-    padding-bottom: 120px;
+    row-gap: 48px;
 }
 
+.team-item {
+    flex: 0 0 calc((100% - 72px) / 4);
+    background-color: #FFFFFF;
+    border-radius: 0 0 4px 4px;
+    overflow: hidden;
+    box-shadow:
+        0 1px 6px rgba(46, 47, 66, 0.08),
+        0 1px 1px rgba(46, 47, 66, 0.16),
+        0 2px 1px rgba(46, 47, 66, 0.08);
+}
+
+/* Фото */
 .team-photo {
     display: block;
     width: 100%;
     height: 260px;
     object-fit: cover;
     object-position: center top;
-
 }
 
-
-.team-item {
-    background-color: #FFFFFF;
+/* Подпись */
+.team-card-body {
+    padding: 32px 16px;
+    text-align: center;
 }
-
 
 .team-name {
+    margin: 0 0 8px;
     font-weight: 500;
     font-size: 20px;
-
-    line-height: 24px;
     line-height: 1.2;
     letter-spacing: 0.02em;
-    text-align: center;
     color: #2E2F42;
-            padding-top: 32px;
-            padding-left: 67px;
-            padding-right: 67px;
-    
 }
 
 .team-role {
+    margin: 0;
     font-size: 16px;
-
-    line-height: 24px;
     line-height: 1.5;
     letter-spacing: 0.02em;
-    text-align: center;
     color: #434455;
-
-    padding-top: 8px;
-        padding-bottom: 32px;
-        padding-left: 78.5px;
-        padding-right: 78.5px;
 }
-
 /* --------------------Portfolio--------------------- */
 .portfolio {
     background-color: #FFFFFF;
-    }
-
-
+    padding: 120px 0;
+    /* секция: верх/низ */
+}
 
 .portfolio-title {
+    margin: 0 0 72px;
+    /* отступ заголовка */
+    text-align: center;
     font-weight: 700;
-        font-size: 36px;
-    
-        /* line-height: 40px; */
-        line-height: 1.11;
-        letter-spacing: 0.02em;
-        text-align: center;
-        color: #2E2F42;
-        text-transform: capitalize;
-        margin-top: 120px;
-        margin-bottom: 72px;
-        text-align: center;
+    font-size: 36px;
+    line-height: 1.11;
+    letter-spacing: 0.02em;
+    color: #2E2F42;
+    text-transform: capitalize;
 }
 
 .portfolio-list {
@@ -298,12 +294,18 @@ width: calc((100% - 72) / 4);
     flex-wrap: wrap;
     justify-content: center;
     gap: 24px;
+    /* горизонтальный зазор */
+    row-gap: 48px;
+    /* вертикальный зазор */
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 .portfolio-item {
-    flex: 0 0 calc((100% - 48px)/3);
+    flex: 0 0 calc((100% - 48px) / 3);
+    /* 3 карточки в ряд */
     background: #fff;
-    border: 1px solid #E7E9FC;
 }
 
 .portfolio-image {
@@ -312,24 +314,31 @@ width: calc((100% - 72) / 4);
     height: 300px;
     object-fit: cover;
 }
+
+/* НИЖНЯЯ часть карточки с рамкой */
+.portfolio-card-body {
+    padding: 32px 16px;
+    border: 1px solid #E7E9FC;
+    border-top: none;
+    /* рамка только снизу */
+}
+
 .portfolio-name {
+    margin: 0 0 8px;
+    /* тест требует 8px */
     font-weight: 500;
-        font-size: 20px;
-        line-height: 1.2;
-        letter-spacing: 0.02em;
-        color: #2E2F42;
-        padding-left: 16px;
-        padding-top: 32px;
-} 
+    font-size: 20px;
+    line-height: 1.2;
+    letter-spacing: 0.02em;
+    color: #2E2F42;
+}
 
 .portfolio-category {
-        font-size: 16px;
-        line-height: 1.5;
-        letter-spacing: 0.02em;
-        color: #434455;
-        padding-left: 16px;
-        padding-bottom: 32px;
-        padding-top: 8px;
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    color: #434455;
 }
 
 /* -------------------------Footer--------------- */
@@ -369,7 +378,7 @@ width: calc((100% - 72) / 4);
         margin: 0;
 }
 .container {
-    width: 1188px;
+    width: 1158px;
     padding-left: 15px;
     padding-right: 15px;
     margin: 0 auto;
