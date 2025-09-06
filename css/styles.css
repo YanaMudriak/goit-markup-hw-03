@@ -2,7 +2,6 @@ body {
             font-family: 'Roboto', sans-serif;
             font-weight: 400;
             font-size: 16px;
-            /* line-height: 24px; */
                 line-height: 1.5;
             letter-spacing: 0.02em;
             color: #434455;
@@ -25,10 +24,19 @@ a {
 .header {
     background-color: #FFFFFF;
     padding: 24px 0;
-border-bottom: 1px solid #e7e9fc;
-        height: 72px;
+    border-bottom: 1px solid #e7e9fc;
 }
 
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-navigation {
+    display: flex;
+    align-items: center;
+}
 
 .header-logo {
     font-family: "Raleway", sans-serif;
@@ -37,62 +45,36 @@ border-bottom: 1px solid #e7e9fc;
     line-height: 1.17;
     letter-spacing: 0.03em;
     text-transform: uppercase;
-    color:#4d5ae5;
-
+    color: #4d5ae5;
     margin-right: 76px;
-
 }
-
 
 .header-logo-accent {
     color: #2E2F42;
 }
-    
-.header-menu-link {
-    font-weight: 500;
-        font-size: 16px;
-    
-        /* line-height: 24px; */
-        line-height: 1.5;
-        letter-spacing: 0.02em;
-        color: #2E2F42;
-        
-}
 
-.header-menu-item:first-child .header-menu-link:hover,
-.header-menu-item:first-child .header-menu-link:focus {
-    color: #404bbf;
-}
-
-
-
-
-.header-contacts {
-    font-style: normal;
-    
-}
-
-.header-contacts-link {
-    font-size: 16px;
-    line-height: 1.5;
-    letter-spacing: 0.02em;
-    color: #434455;
-    
-}
-
-.header-contacts-item:first-child .header-contacts-link:hover,
-.header-contacts-item:first-child .header-contacts-link:focus {
-    color:#404bbf;
-}
 .header-menu-list {
-    padding: 24px 0;
     display: flex;
     gap: 40px;
 }
 
-.header-navigation {
-    display: flex;
-    align-items: center;
+.header-menu-link {
+    display: block;
+    padding: 24px 0;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    color: #2E2F42;
+}
+
+.header-menu-link:hover,
+.header-menu-link:focus {
+    color: #404bbf;
+}
+
+.header-contacts {
+    font-style: normal;
 }
 
 .header-contacts-list {
@@ -100,14 +82,18 @@ border-bottom: 1px solid #e7e9fc;
     gap: 40px;
     align-items: center;
 }
-.header .container {
-    display: flex;
-    justify-content: space-between;
+
+.header-contacts-link {
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    color: #434455;
 }
 
-
-
-
+.header-contacts-link:hover,
+.header-contacts-link:focus {
+    color: #404bbf;
+}
 /* -----------------------Hero----------------- */
 
 .hero {
@@ -118,8 +104,6 @@ padding: 188px 0;
 .hero-title {
     font-weight: 700;
         font-size: 56px;
-    
-        /* line-height: 60px; */
         line-height: 1.07;
         letter-spacing: 0.02em;
         text-align: center;
@@ -160,6 +144,31 @@ border-radius: 4px;
     padding: 120px 0;
 }
 
+.features-list {
+    display: flex;
+    gap: 24px;
+}
+
+.features-item {
+    width: calc((100% - 72px) / 4);
+}
+
+.features-subtitle {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 1.2;
+    letter-spacing: 0.02em;
+    color: #2E2F42;
+    margin: 0 0 8px;
+}
+
+.features-description {
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    color: #434455;
+}
+
 .visually-hidden {
     position: absolute;
     width: 1px;
@@ -169,53 +178,22 @@ border-radius: 4px;
     padding: 0;
     white-space: nowrap;
     clip-path: inset(100%);
-    clip: rect(0 0 0 0);
+    clip: rect(0, 0, 0, 0);
     overflow: hidden;
 }
-.features-subtitle {
-    font-weight: 500;
-    font-size: 20px;
-    margin-bottom: 8px;
-
-    /* line-height: 24px; */
-    line-height: 1.2;
-    letter-spacing: 0.02em;
-    color:#2E2F42;
-}
-
-.features-description {
-
-    font-size: 16px;
-
-    /* line-height: 24px; */
-    line-height: 1.5;
-    letter-spacing: 0.02em;
-    color: #434455;
-}
-
-.features-list {
-    display: flex;
-    gap: 24px;
-    padding-top: 123px;
-    padding-bottom: 120px;
-    flex-basis: calc((100% - 72px) / 4);
-    }
 /* ---------------------------Team ------------------*/
 .team {
     background-color: #F4F4FD;
     padding: 120px 0;
-    /* как требуют тесты */
 }
 
 .team-title {
     margin: 0 0 72px;
-    /* отступ заголовка от списка */
     font-weight: 700;
     font-size: 36px;
     line-height: 1.11;
     letter-spacing: 0.02em;
     text-align: center;
-    /* обязательно: text-align:center */
     color: #2E2F42;
     text-transform: capitalize;
 }
@@ -239,7 +217,6 @@ border-radius: 4px;
         0 2px 1px rgba(46, 47, 66, 0.08);
 }
 
-/* Фото */
 .team-photo {
     display: block;
     width: 100%;
@@ -248,9 +225,8 @@ border-radius: 4px;
     object-position: center top;
 }
 
-/* Подпись */
 .team-card-body {
-    padding: 32px 16px;
+    padding: 32px 0;
     text-align: center;
 }
 
@@ -274,12 +250,10 @@ border-radius: 4px;
 .portfolio {
     background-color: #FFFFFF;
     padding: 120px 0;
-    /* секция: верх/низ */
 }
 
 .portfolio-title {
     margin: 0 0 72px;
-    /* отступ заголовка */
     text-align: center;
     font-weight: 700;
     font-size: 36px;
@@ -294,9 +268,7 @@ border-radius: 4px;
     flex-wrap: wrap;
     justify-content: center;
     gap: 24px;
-    /* горизонтальный зазор */
     row-gap: 48px;
-    /* вертикальный зазор */
     list-style: none;
     margin: 0;
     padding: 0;
@@ -304,7 +276,6 @@ border-radius: 4px;
 
 .portfolio-item {
     flex: 0 0 calc((100% - 48px) / 3);
-    /* 3 карточки в ряд */
     background: #fff;
 }
 
@@ -315,17 +286,14 @@ border-radius: 4px;
     object-fit: cover;
 }
 
-/* НИЖНЯЯ часть карточки с рамкой */
 .portfolio-card-body {
     padding: 32px 16px;
     border: 1px solid #E7E9FC;
     border-top: none;
-    /* рамка только снизу */
 }
 
 .portfolio-name {
     margin: 0 0 8px;
-    /* тест требует 8px */
     font-weight: 500;
     font-size: 20px;
     line-height: 1.2;
@@ -370,7 +338,6 @@ border-radius: 4px;
 .footer-text {
         font-size: 16px;
     
-        /* line-height: 24px; */
         line-height: 1.5;
         letter-spacing: 0.02em;
         color: #F4F4FD;
